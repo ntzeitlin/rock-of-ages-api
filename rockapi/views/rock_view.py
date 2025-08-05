@@ -63,7 +63,7 @@ class RockView(ViewSet):
 
         try:
             rocks = Rock.objects.all()
-
+            print("DEBUG: Fetching rocks from the database")
             if owner_only is not None and owner_only == "current":
                 rocks = rocks.filter(user=request.auth.user)
 
